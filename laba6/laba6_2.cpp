@@ -13,10 +13,10 @@ bool gol(char c)
 
 char randc(bool gol) 
 {
-    if (gol) 
+    if(gol) 
 	{
         char gol[] = {'a', 'e', 'i', 'o', 'u', 'y'};
-        return gol[rand() % 6];
+        return gol[rand()%6];
     } 
 	else 
 	{
@@ -36,7 +36,8 @@ char** matrita(int n)
             if(i==j || i+j==n-1) 
 			{
                 a[i][j]=randc(true);
-            } else 
+            } 
+			else 
 			{
                 a[i][j]=randc(false);
             }
