@@ -22,19 +22,19 @@ int main()
 	}
 	for(i=0;i<n;i++)
 	{
-		if(int(a[i])%3==0)
+		if(int(a[i])%3!=0)
 		{
 			ka++;
 		}
 	}
 	for(i=0;i<m;i++)
 	{
-		if(int(b[i])%3==0)
+		if(int(b[i])%3!=0)
 		{
 			kb++;
 		}
 	}
-	if(ka<kb)
+	if(ka>kb)
 	{
 		for(i=0;i<n;i++)
 		{
@@ -45,7 +45,7 @@ int main()
 	{
 		cout<<"Error! ";
 	}
-	if(ka>kb)
+	if(ka<kb)
 	{
 		for(i=0;i<m;i++)
 		{

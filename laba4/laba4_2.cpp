@@ -5,7 +5,7 @@
 using namespace std;
 
 // functia dlia masivu b[j]
-void createFilteredArray(float* a, int n, float*& b, int& m) 
+void crarray(float* a, int n, float*& b, int& m) 
 {
     m=0;
     for(int i=1;i<n;i+=2) 
@@ -47,7 +47,7 @@ int main()
     int m=0;
 
     //vyklyk fcuntii cerez vkazivnyk
-    void (*p)(float*,int,float*&,int&)=createFilteredArray;
+    void (*p)(float*,int,float*&,int&)=crarray;
     p(a,n,b,m);
 
     cout<<"masiv b:\n";
