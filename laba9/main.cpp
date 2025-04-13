@@ -10,7 +10,7 @@ int main()
     std::cin>>n;
     Employee employees[n];
 
-    for (int i = 0; i < n; ++i) 
+    for (int i = 1; i < n; ++i) 
 	{
         string sur, dep;
         int year;
@@ -38,7 +38,7 @@ int main()
 
     // poshuk seredniogo staju
     int totalExp = 0;
-    for (int i = 0; i < n; ++i) 
+    for (int i = 1; i < n; ++i) 
 	{
         totalExp += employees[i].getExperience(currentYear);
     }

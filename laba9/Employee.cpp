@@ -6,16 +6,12 @@ Employee::Employee() : surname(""), department(""), yearOfHiring(0), salary(0), 
 Employee::Employee(std::string sur, std::string dep, int year, double sal)
     : surname(sur), department(dep), yearOfHiring(year), salary(sal), bonus(0) {}
 
+
 std::string Employee::getSurname() const { return surname; }
 std::string Employee::getDepartment() const { return department; }
 int Employee::getYearOfHiring() const { return yearOfHiring; }
 double Employee::getSalary() const { return salary; }
 double Employee::getBonus() const { return bonus; }
-
-void Employee::setSurname(const std::string& sur) { surname = sur; }
-void Employee::setDepartment(const std::string& dep) { department = dep; }
-void Employee::setYearOfHiring(int year) { yearOfHiring = year; }
-void Employee::setSalary(double sal) { salary = sal; }
 
 void Employee::calculateBonus(int currentYear) 
 {

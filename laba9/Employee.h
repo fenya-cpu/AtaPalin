@@ -1,6 +1,3 @@
-#ifndef EMPLOYEE_H
-#define EMPLOYEE_H
-
 #include <string>
 
 class Employee 
@@ -22,15 +19,9 @@ public:
     double getSalary() const;
     double getBonus() const;
 
-    void setSurname(const std::string& sur);
-    void setDepartment(const std::string& dep);
-    void setYearOfHiring(int year);
-    void setSalary(double sal);
 
     void calculateBonus(int currentYear);
     int getExperience(int currentYear) const;
 
     void display() const;
 };
-
-#endif
