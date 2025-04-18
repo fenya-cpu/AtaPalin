@@ -5,7 +5,6 @@ using namespace std;
 
 int main() 
 {
-    const int currentYear = 2025;
     int n;
     std::cin>>n;
     Employee employees[n];
@@ -27,7 +26,7 @@ int main()
         cin >> sal;
 
         employees[i] = Employee(sur, dep, year, sal);
-        employees[i].calculateBonus(currentYear);
+        employees[i].calculateBonus(2025);
     }
 
     std::cout << "\ninformatia pro vsih:\n";
@@ -40,7 +39,7 @@ int main()
     int totalExp = 0;
     for (int i = 1; i < n; ++i) 
 	{
-        totalExp += employees[i].getExperience(currentYear);
+        totalExp += employees[i].getExperience(2025);
     }
     cout << "\nseredniy staj: " << (totalExp / n) << " rokiv\n";
 
@@ -49,7 +48,7 @@ int main()
 	{
         for (int j = i + 1; j < n; ++j) 
 		{
-            if (employees[i].getExperience(currentYear) < employees[j].getExperience(currentYear)) 
+            if (employees[i].getExperience(2025) < employees[j].getExperience(2025)) 
 			{
                 swap(employees[i], employees[j]);
             }
@@ -61,6 +60,17 @@ int main()
 	{
         employees[i].display();
     }
+    cout<<endl;
+    departmentStats(employees,n);
+    
+    cout << "\nVidpustky:\n";
+    for (int i = 0; i < n; ++i) {
+        Vacation vac(employees[i], 2025);
+        vac.display();
+    }
+    
+    cout<<endl;
+    
 
     return 0;
 }

@@ -24,4 +24,20 @@ public:
     int getExperience(int currentYear) const;
 
     void display() const;
+    friend void departmentStats(Employee employees[], int n);
+};
+
+
+class Vacation {
+private:
+    Employee employee;
+    std::string startDate;
+    int duration;
+    std::string endDate;
+
+    std::string calculateEndDate(const std::string& start, int durationDays);
+
+public:
+    Vacation(Employee emp, int currentYear);
+    void display() const;
 };
