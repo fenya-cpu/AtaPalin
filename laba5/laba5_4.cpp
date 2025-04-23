@@ -62,7 +62,7 @@ int main()
 		{
             for(i=0;i<n;i++) 
 			{
-                sum+=a[i][j];
+                sum=sum+a[i][j];
             }
         }
     }
