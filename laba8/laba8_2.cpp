@@ -18,8 +18,9 @@ public:
 
     //Konstructor s parametrom
     People(string sname, string cntry, char g, string edu, int bYear) 
-        : surname(sname), country(cntry), gender(g), education(edu), birthYear(bYear) {
-        age = 2024 - birthYear;
+        : surname(sname), country(cntry), gender(g), education(edu), birthYear(bYear) 
+	{
+        age = 2025 - birthYear;
     }
 
     //Metod vedenia danyh
@@ -31,7 +32,7 @@ public:
 		cin>>country;
         cout<<"Vediti stati' (M/F): "; 
 		cin>>gender;
-        cout<<"Vediti osvitu: "; 
+        cout<<"Vediti osvitu:(V/S) "; 
 		cin>>education;
         cout<<"Vediti rik narodjenia: "; 
 		cin>>birthYear;
@@ -52,17 +53,17 @@ public:
 
     //destructor
     ~People() {
-        cout << "Obect "<<surname<<" vydaleno" << endl;
+    	
     }
 };
 
 //dlia vyvedenya liudei pid umovoiu
-void filterByEducationAndAge(People arr[], int size, int minAge) 
+void filtr(People arr[], int size, int minAge) 
 {
     cout<<"\nLiudyna z vyshoiu osvtoiu ta vikom bilishe " << minAge << ":" << endl;
     for (int i=0;i<size;i++) 
 	{
-        if (arr[i].getEducation() == "Vushca" && arr[i].getAge() > minAge) 
+        if (arr[i].getEducation() == "V" && arr[i].getAge() > minAge) 
 		{
             arr[i].display();
         }
@@ -70,7 +71,7 @@ void filterByEducationAndAge(People arr[], int size, int minAge)
 }
 
 //vydalenia osib pevnoi stati
-void removeByGender(People arr[], int &size, char g) 
+void remove(People arr[], int &size, char g) 
 {
     int newSize = 0;
     for (int i=0;i<size; i++) 
@@ -91,8 +92,9 @@ int main()
     People people[n];
 
     cout<<"Vediti dani pro liudei:\n";
-    for (int i=0;i<n;i++) 
+    for (int i=1;i<n;i++) 
 	{
+		people[i]=People();
         cout<<"Liudina "<<i+1<<":\n";
         people[i].input();
     }
@@ -102,14 +104,14 @@ int main()
 	{
         people[i].display();
     }
-    filterByEducationAndAge(people, n, 25);
+    filtr(people, n, 25);
     char genderToRemove;
     cout<<"\nVediti stati dlya vydalenia (M/F): ";
     cin>>genderToRemove;
     int newSize=n;
-    removeByGender(people, newSize, genderToRemove);
+    remove(people, newSize, genderToRemove);
 
-    cout<<"\nNovyi spysok "<<genderToRemove<<":\n";
+    cout<<"\nNovyi spysok "<<":\n";
     for (int i=0;i<newSize;i++) 
 	{
         people[i].display();
