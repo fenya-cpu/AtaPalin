@@ -18,11 +18,11 @@ void generateArray(int a[],int n)
 
 void createSubarray(int a[], int b[], int& size_b, int i1, int i2,int n) 
 {
-    if (i1>i2)
+    if(i1>i2)
 	swap(i1,i2);
-    if (i1<0||i2>=n) 
+    if(i1<0||i2>=n) 
 	{
-        cout << "error!"<<endl;
+        cout<<"error!"<<endl;
         size_b=0;
         return;
     }
@@ -36,7 +36,7 @@ void createSubarray(int a[], int b[], int& size_b, int i1, int i2,int n)
 
 void printArray(const int arr[], int size) 
 {
-    for (int i=0;i<size;++i) 
+    for(int i=0;i<size;++i) 
 	{
         cout<<arr[i]<<" ";
     }
@@ -58,7 +58,7 @@ int main() {
     createSubarray(a, b, size_b, i1, i2, n);
     
     cout<<"masiv b: ";
-    printArray(b, size_b);
+    printArray(b,size_b);
 
 
     return 0;

@@ -7,11 +7,11 @@ using namespace std;
 class Pracivnyk 
 {
 protected:
-    string prizvyshche;
     int vik;
     int stazhVodinnya;
 
 public:
+	string prizvyshche;
     Pracivnyk(string p="",int v=0,int s=0)
     : prizvyshche(p), vik(v), stazhVodinnya(s) {}
 
@@ -23,26 +23,28 @@ public:
         vik=v;
         stazhVodinnya=s;
     }
-
+    
+    int Stazh() const 
+	{return 2025-stazhVodinnya;}
+	
     void vyvestyInfo() const 
 	{
-        cout<<"prizvyshche: "<<prizvyshche<<", vik: "<<vik<<",staj vodinnya: "<<stazhVodinnya<<" rokiv"<<endl;
+        cout<<"prizvyshche: "<<prizvyshche<<", vik: "<<vik<<",staj vodinnya: "<<stazhVodinnya<<" rokiv, "<<"Rik pochatku staju: "<<Stazh()<<" rokiv"<<endl;
     }
 
-    int getStazh() const 
-	{return stazhVodinnya;}
 };
 
 
 class Avtomobil 
 {
 protected:
-    string reestrNom;
-    string marka;
     int rikVypusku;
     int probig;
 
 public:
+	string reestrNom;
+    string marka;
+    
     Avtomobil(string rn="", string m="", int rv=0, int p=0)
         : reestrNom(rn), marka(m), rikVypusku(rv), probig(p) {}
 
@@ -55,12 +57,15 @@ public:
         rikVypusku = rv;
         probig = p;
     }
-
-    void vyvestyInfo() const {
-        cout<<"Nomer: "<<reestrNom<<", Marka: "<<marka<<", Rik vypusku: "<<rikVypusku<< ", Probig: "<<probig<<" km"<<endl;
+    
+	int ser() const 
+	{return probig/(2025-rikVypusku);}
+	
+    void vyvestyInfo() const 
+	{
+        cout<<"Nomer: "<<reestrNom<<", Marka: "<<marka<<", Rik vypusku: "<<rikVypusku<< ", Probig: "<<probig<<" km,"<<" Serednioricinyi probig: "<<ser()<<endl;
     }
 
-    int getRikVypusku() const {return rikVypusku;}
 };
 
 
@@ -122,7 +127,7 @@ int main()
 {
     try 
 	{
-        Vodiy v("Rusnak", 40, 20, "AT0224IH", "Volkswagen", 2010, 200000, 2015, true);
+        Vodiy v("Rusnak",40,20,"AT0224IH","Volkswagen",2010,200000,2015,true);
         v.vyvestyInfo();
 
         cout<<endl<<"Onovlenii dani:"<<endl;

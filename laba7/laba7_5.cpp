@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdarg>
 using namespace std;
-const int SIZE = 12;
+const int SIZE=12;
 
 void func(int a[], int b[], int count, ...) 
 {
@@ -33,11 +33,23 @@ void func(int a[], int b[], int count, ...)
     cout<<endl;
 }
 
+void printArray(const int arr[], int size) 
+{
+    for(int i=0;i<size;++i) 
+	{
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main() 
 {
     int a[SIZE]={13, 4, 2, 28, 34, 7, 10, 21, 43, 50, 37, 11};
     int b[SIZE]={5, 4, 12, 3, 30, 7, 11, 45, 49, 37, 15, 11};
-
+    printArray(a,SIZE);
+    printArray(b,SIZE);
+    
+	cout<<"Indexy yaki vvelysi: 1 4 5 9 10"<<endl;
     func(a, b, 5, 1, 4, 5, 9, 10);
 
     return 0;

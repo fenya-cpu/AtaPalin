@@ -33,15 +33,14 @@ public:
     }
 };
 
-// ======== ПОХІДНИЙ КЛАС: Автомобіль =========
-// Використовуємо public-наслідування, щоб зберегти доступність методів базового класу
 class Avtomobil : public Dvyhun {
 protected:
     string marka;
     double tsina;
 
 public:
-    Avtomobil() : Dvyhun() {
+    Avtomobil() : Dvyhun() 
+	{
         marka = "Невідома";
         tsina = 0;
         cout << "Конструктор Avtomobil (за замовчуванням)\n";
