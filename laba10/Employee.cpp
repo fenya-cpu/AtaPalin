@@ -35,7 +35,8 @@ void Employee::display() const
     std::cout << "Prizvyshe: " << surname << ", Viddil: " << department << ", Rik pryiomu: " << yearOfHiring << ", Zarplata: " << salary << ", Premia: " << bonus << std::endl;
 }
 
-void departmentStats(Employee employees[], int n) {
+void departmentStats(Employee employees[], int n) 
+{
     std::string departments[10];
     int k=0;
 
@@ -55,7 +56,7 @@ void departmentStats(Employee employees[], int n) {
 
         if (!dep) 
 		{
-            int kp = 0;
+            int kp=0;
             double totalSalary=0;
 
             for (int m=0;m<n;++m) 
@@ -69,34 +70,35 @@ void departmentStats(Employee employees[], int n) {
 
             departments[k++]=currentdept;
 
-            std::cout << " Viddil: " << currentdept << ", K-st pracivnykiv: " << kp << ", Zagalna zarplata: " << totalSalary << " grn\n";
+            std::cout<<" Viddil: "<<currentdept<<", K-st pracivnykiv: "<<kp<<", Zagalna zarplata: "<<totalSalary<<" grn\n";
         }
     }
 }
 
-Vacation::Vacation(Employee emp, int currentYear)
-    : employee(emp), startDate("01.07.2021")
+Vacation::Vacation(Employee emp, int currentYear):employee(emp),startDate("01.07.2021")
 {
-    int exp = emp.getExperience(currentYear);
-    double totalSalary = emp.getSalary() + emp.getBonus();
+    int exp=emp.getExperience(currentYear);
+    double totalSalary=emp.getSalary()+emp.getBonus();
 
-    if (exp < 10 && totalSalary < 12000)
-        duration = 14;
-    else if (exp > 25 && totalSalary > 25000)
-        duration = 28;
+    if (exp<10&&totalSalary<12000)
+        duration=14;
+    else if (exp>25&&totalSalary>25000)
+        duration=28;
     else
-        duration = 21;
+        duration=21;
 
-    endDate = calculateEndDate(startDate, duration);
+    endDate=calculateEndDate(startDate,duration);
 }
 
-std::string Vacation::calculateEndDate(const std::string& start, int days) {
-    return  "01.07.2021+ " + std::to_string(days) + " dniv";
+std::string Vacation::calculateEndDate(const std::string& start,int days) 
+{
+    return  "01.07.2021+ "+std::to_string(days)+" dniv";
 }
 
-void Vacation::display() const {
-    std::cout << "Vidpustka dlia: " << employee.getSurname()
-              << ", Start: " << startDate
-              << ", Trivalist: " << duration << " dniv"
-              << ", Kinets: " << endDate << std::endl;
+void Vacation::display() const 
+{
+    std::cout<<"Vidpustka dlia: "<<employee.getSurname()
+	<<", Start: "<<startDate
+    << ", Trivalist: "<<duration<<" dniv"
+    <<", Kinets: "<<endDate<<std::endl;
 }

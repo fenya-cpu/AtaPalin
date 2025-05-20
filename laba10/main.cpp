@@ -36,17 +36,17 @@ int main()
     }
 
     // poshuk seredniogo staju
-    int totalExp = 0;
-    for (int i = 1; i < n; ++i) 
+    int totalExp=0;
+    for (int i=1;i<n;++i) 
 	{
-        totalExp += employees[i].getExperience(2025);
+        totalExp+=employees[i].getExperience(2025);
     }
-    cout << "\nseredniy staj: " << (totalExp / n) << " rokiv\n";
+    cout<<"\nseredniy staj: "<<(totalExp/n) <<" rokiv\n";
 
     //sortuvania za stajem
-    for (int i = 0; i < n - 1; ++i) 
+    for (int i=0;i<n-1;++i) 
 	{
-        for (int j = i + 1; j < n; ++j) 
+        for (int j=i+1;j<n;++j) 
 		{
             if (employees[i].getExperience(2025) < employees[j].getExperience(2025)) 
 			{
@@ -56,7 +56,7 @@ int main()
     }
 
     cout << "\npislea sortuvania za stajem:\n";
-    for (int i = 0; i < n; ++i) 
+    for (int i=0;i<n;++i) 
 	{
         employees[i].display();
     }
@@ -64,7 +64,8 @@ int main()
     departmentStats(employees,n);
     
     cout << "\nVidpustky:\n";
-    for (int i = 0; i < n; ++i) {
+    for (int i=0;i<n;++i) 
+	{
         Vacation vac(employees[i], 2025);
         vac.display();
     }
